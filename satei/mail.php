@@ -147,7 +147,7 @@ if (isset($_POST["send"])) {
 
 
     // Send email
-   /*  if ($mail->send()) {
+     if ($mail->send()) {
         // Insert data into the database
         $stmt = $conn->prepare("INSERT INTO inquiries (property_type, address, name, gender, phone_number, email_address) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $物件の種別, $物件の所在地, $お名前, $性別, $電話番号, $メールアドレス);
@@ -162,7 +162,7 @@ if (isset($_POST["send"])) {
         echo "Failed to send email.";
     }
 
-    $conn->close(); */
+    $conn->close(); 
     
     if ($mail->send()) {
     // Email sent successfully
