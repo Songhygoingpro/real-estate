@@ -1,4 +1,4 @@
-<?php
+<li?php
 
 session_start();
 
@@ -34,11 +34,12 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <title>査定</title>
+  <link rel="icon" type="image/png" href="../assets/img/site-favicon.png">
 </head>
 
 <body data-aos="custom-fadeUp">
-  <header class="flex bg-sky-600 text-white justify-between items-center py-6 px-4 md:px-10 w-full sticky top-0 z-10">
-    <a href=""><img src="" /></a>
+  <header class="flex text-white justify-between items-center transition-colors p-4 md:px-10 w-full sticky top-0 z-10">
+    <a href="../baikyaku/index.html"><img src="../assets/img/real-estate-logo.png" class="h-8 sm:h-9 w-auto" alt /></a>
   </header>
   <main>
     <section class="form-section flex justify-center items-center py-16">
@@ -282,11 +283,11 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">性別</p>
               </div>
-              <div class="grid gap-4">
-                <div class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="男性" value="男性"><label for="男性">男性</label></div>
-                <div class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="女性" value="女性"><label for="女性">女性</label></div>
-                <div class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="回答しない" value="回答しない"><label for="回答しない">回答しない</label></div>
-              </div>
+              <ul class="grid gap-4">
+                <li class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="男性" value="男性"><label for="男性">男性</label></li>
+                <li class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="女性" value="女性"><label for="女性">女性</label></li>
+                <li class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="回答しない" value="回答しない"><label for="回答しない">回答しない</label></li>
+              </ul>
             </div>
             <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
               <div class="flex items-center gap-4">
@@ -369,16 +370,16 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
   <footer class="footer bg-[#00152A] grid text-white mt-16">
     <div class="footer__inner p-4 md:p-8">
       <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 text-[12px] md:text-sm h-36">
-        <div class="flex gap-4">
-          <a href="#" data-aos="fade-up">不動産売却</a>
-          <a href="#" data-aos="fade-up">不動産購入</a>
-          <a href="#" data-aos="fade-up">お問い合わせ</a>
-          <a href="#" data-aos="fade-up">加盟店募集</a>
-        </div>
-        <div class="flex gap-4">
-          <a href="#" data-aos="fade-up">プライバシーポリシー</a>
-          <a href="#" data-aos="fade-up">ご利用規約</a>
-        </div>
+      <ul class="flex gap-4" data-aos="fade-up">
+          <li><a href="#">不動産売却</a></li>
+          <li><a href="#">不動産購入</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">加盟店募集</a></li>
+        </ul>
+        <ul class="flex gap-4" data-aos="fade-up">
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">ご利用規約</a></li>
+        </ul>
       </div>
     </div>
     <div class="flex justify-center py-4 border-t-[1px] w-full">
