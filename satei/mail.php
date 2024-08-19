@@ -51,7 +51,6 @@ if (empty($希望査定方法2) || empty($希望査定方法)) {
 }
 
 // Prepare the email content
-
 if (isset($_POST["send"])) {
     $mail = new PHPMailer(true);
 

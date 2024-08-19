@@ -78,9 +78,9 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-center">
+      <div class="localtion-form flex justify-center">
         <form action="../satei/index.php" method="post" id="locationForm"
-          class="2xl:absolute 2xl:bottom-0 bg-[#004790] flex flex-col items-center gap-6 p-4 py-8 md:px-16 w-full 2xl:w-[880px]"
+          class="2xl:absolute 2xl:bottom-0 bg-[#004790] flex flex-col items-center gap-6 p-4 py-8 md:px-16 w-full 2xl:w-[950px]"
           data-aos="custom-fadeUp">
           <h2 class="text-[20px] sm:text-3xl text-center text-white font-bold">
             簡単・無料！査定価格を比較しよう！
@@ -181,12 +181,12 @@
         <h2 class="text-2xl md:text-3xl font-bold text-[#00152A]" data-aos="fade-up">
           よくある質問
         </h2>
-        <ul class="faq-items w-fit grid gap-8 overflow-hidden">
+        <ul class="faq-items max-w-[950px] w-full grid gap-8 overflow-hidden">
           <li class="faq-item grid gap-4 pb-6 border-b-[1px] border-[#B3B3B3]" data-aos="fade-up">
             <div class="faq-quesition flex  items-start gap-2">
               <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black"
                 style="font-family: 'Inter', sans-serif;">Q</p>
-              <p class="text-[19px] md:text-2xl text-start font-medium">
+              <p class="text-[19px] md:text-2xl text-start font-bold">
                 利用にお金はかかりますか？
               </p>
             </div>
@@ -200,7 +200,7 @@
             <div class="faq-quesition flex items-start gap-2">
               <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black"
                 style="font-family: 'Inter', sans-serif;">Q</p>
-              <p class="text-[19px] md:text-2xl font-medium text-start">
+              <p class="text-[19px] md:text-2xl font-bold text-start">
                 査定依頼をしたらその会社に売却依頼をしないといけないのですか？
               </p>
             </div>
@@ -214,7 +214,7 @@
             <div class="faq-quesition flex items-start gap-2">
               <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black"
                 style="font-family: 'Inter', sans-serif;">Q</p>
-              <p class="text-[19px] md:text-2xl font-medium text-start">
+              <p class="text-[19px] md:text-2xl font-bold text-start">
                 近隣住民に売却したことを知られますか？
               </p>
             </div>
@@ -228,7 +228,7 @@
             <div class="faq-quesition flex items-start gap-2">
               <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black"
                 style="font-family: 'Inter', sans-serif;">Q</p>
-              <p class="text-[19px] md:text-2xl font-medium text-start">
+              <p class="text-[19px] md:text-2xl font-bold text-start">
                 しつこい営業電話はかかってきますか？
               </p>
             </div>
@@ -346,7 +346,7 @@
       }
     }
 
-//make  options in select boxes change dynamically correspond to prefecture or city
+//make  options in select boxes change dynamically correspond to prefecture and city
     $(document).ready(function () {
       $('#prefecture').change(function () {
         let selectedValue = $(this).val();
