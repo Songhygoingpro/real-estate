@@ -152,7 +152,7 @@ if (isset($_POST["send"])) {
         $stmt->bind_param("ssssss", $物件の種別, $物件の所在地, $お名前, $性別, $電話番号, $メールアドレス);
 
         if ($stmt->execute()) {
-            header("Location: success.php");
+            header("Location: success.html");
         } else {
             echo "Error: " . $stmt->error;
         }
@@ -163,10 +163,4 @@ if (isset($_POST["send"])) {
 
     $conn->close(); 
     
-    if ($mail->send()) {
-    // Email sent successfully
-    header("Location: success.html");
-} else {
-    echo "Failed to send email.";
-}
 }

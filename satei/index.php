@@ -408,7 +408,7 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
 
       if (form.checkValidity()) {
         if (email.value === confirmEmail.value) {
-          form.submit();
+          //form.submit();
           document.getElementById("email-confirmation-warning").classList.add('hidden');
         } else {
           document.getElementById("email-confirmation-warning").classList.remove('hidden');
