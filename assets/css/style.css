@@ -107,14 +107,15 @@
     padding: 10px;
 }
 
-/* Remove the spin buttons */
+
+/* Remove spinner button of the input field type number for WebKit browsers (Chrome, Safari, Edge) */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+-webkit-appearance: none;
+ margin: 0;
 }
 
-/* Prevent appearance in Firefox */
+/* Remove spinner for other browsers */
 input[type="number"] {
-    -moz-appearance: none;
+appearance: textfield; /* Fallback for other browsers */
 }

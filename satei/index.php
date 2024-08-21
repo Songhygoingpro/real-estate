@@ -2,11 +2,6 @@
 
 session_start();
 
-$物件の種別 = '';
-$prefecture = '';
-$city = '';
-$town = '';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $物件の種別 = isset($_POST['物件の種別']) ? htmlspecialchars($_POST['物件の種別'], ENT_QUOTES, 'UTF-8') : '';
@@ -398,7 +393,7 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
       once: true,
     });
 
-    //loading warning message when the email is not marching
+    //loading warning message when the email is not matching
     function submitForm(event) {
 
       let form = document.getElementById("inquiriesForm");

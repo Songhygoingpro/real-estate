@@ -54,20 +54,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-//Reveal answer
-document.querySelectorAll(".faq-toggle").forEach((toggle) => {
-  toggle.addEventListener("click", function () {
-    const icon = this.querySelector(".dropdown-icon");
-    const answer = this.querySelector(".faq-answer");
-
-    icon.classList.toggle("rotate-180");
-
-    answer.classList.toggle("max-h-14");
-    answer.classList.toggle("h-full");
-    answer.classList.toggle("pb-4");
-  });
-});
-
 //Back to the top button
 const backToTopButton = document.getElementById("backToTop");
 
