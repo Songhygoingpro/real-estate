@@ -5,9 +5,9 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $物件の種別 = isset($_POST['物件の種別']) ? htmlspecialchars($_POST['物件の種別'], ENT_QUOTES, 'UTF-8') : '';
-$prefecture = isset($_POST['prefecture']) ? htmlspecialchars($_POST['prefecture'], ENT_QUOTES, 'UTF-8') : '';
-$city = isset($_POST['city']) ? htmlspecialchars($_POST['city'], ENT_QUOTES, 'UTF-8') : '';
-$town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UTF-8') : '';
+  $prefecture = isset($_POST['prefecture']) ? htmlspecialchars($_POST['prefecture'], ENT_QUOTES, 'UTF-8') : '';
+  $city = isset($_POST['city']) ? htmlspecialchars($_POST['city'], ENT_QUOTES, 'UTF-8') : '';
+  $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UTF-8') : '';
 
   // Store sanitized data in session variables
   $_SESSION['物件の種別'] = $物件の種別;
@@ -41,13 +41,13 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
       <div class="form-section__inner w-full max-w-[1040px] h-auto grid gap-6 px-4">
         <h1 class="text-3xl text-center font-bold">査定</h1>
         <form class="grid gap-6" action="mail.php" method="post" id="inquiriesForm" onsubmit="submitForm(event)">
-          <div class="grid border-0 md:border-[1px] border-black">
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] gap-4 p-4 px-0 md:px-8">
-              <div class="flex items-center gap-4">
+          <table class="grid border-0 md:border-[1px] border-black">
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] gap-4 p-4 px-0 md:px-8">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">物件種別</p>
-              </div>
-              <div class="flex justify-start items-center">
+              </th>
+              <td class="flex justify-start items-center">
                 <?php
                 if ($物件の種別) {
                   echo "<p>$物件の種別</p>";
@@ -55,14 +55,14 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                   echo "";
                 }
                 ?>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">所在地</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <div>
                   <?php
                   echo "<strong>$prefecture$city$town</strong>";
@@ -77,14 +77,15 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                 <p class="text-[#5D0000]">
                   番地など住所情報にお間違えがないかご確認ください（不足していると、査定が実施できません）
                 </p>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th
+                class="flex items-center gap-4">
                 <p class="bg-gray-500 p-1 text-white">任意</p>
                 <p class="font-bold">間取り</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <div class="custom-select-box w-[15rem] bg-gray-300">
                   <select name="間取り">
                     <option value="">--選択してください--</option>
@@ -104,14 +105,14 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                   </select>
                 </div>
                 <p class="text-[#5D0000]">近い間取りでかまいません</p>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-gray-500 p-1 text-white">任意</p>
                 <p class="font-bold">専有面積</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <div class="custom-select-box w-[15rem] bg-gray-300">
                   <select name="専有面積">
                     <option value="">--選択してください--</option>
@@ -169,14 +170,14 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                   </select>
                 </div>
                 <p class="text-[#5D0000]">おおよその面積でかまいません</p>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">築年</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <div class="flex items-center gap-4">
                   <div class="custom-select-box w-[15rem] bg-gray-300">
                     <select name="築年" id="yearSelect">
@@ -186,110 +187,110 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                   <p>頃</p>
                 </div>
                 <p class="text-[#5D0000]">おおよその時期でかまいません</p>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">現状</p>
-              </div>
-              <ul class="grid gap-4">
-                <li class="flex gap-4">
+              </th>
+              <td class="grid gap-4">
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="現状" value="ご自身またはご家族・親戚が居住中" id="居住中" />
                   <label for="居住中">ご自身またはご家族・親族が居住中</label>
-                </li>
-                <li class="flex gap-4">
+                </div>
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="現状" value="賃貸中" id="賃貸中" /><label for="賃貸中">賃貸中</label>
-                </li>
-                <li class="flex gap-4">
+                </div>
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="現状" value="空き家" id="空き家" /><label for="空き家">空き家</label>
-                </li>
-              </ul>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+                </div>
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">あなたと売却物件との関係</p>
-              </div>
-              <ul class="grid gap-4">
-                <li class="flex gap-4">
+              </th>
+              <td class="grid gap-4">
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="あなたと売却物件との関係" value="名義人" id="名義人" /><label for="名義人">名義人</label>
-                </li>
-                <li class="flex gap-4">
+                </div>
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="あなたと売却物件との関係" value="名義人に売却の同意を得た家族、親族" id="配偶者" /><label for="配偶者">名義人に売却の同意を得た家族、親族</label>
-                </li>
-                <li class="flex gap-4">
+                </div>
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="あなたと売却物件との関係" value="共有名義" id="共有名義" /><label for="共有名義">共有名義</label>
-                </li>
-                <li class="flex gap-4">
+                </div>
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="あなたと売却物件との関係" value="会社名義" id="会社名義" /><label for="会社名義">会社名義</label>
-                </li>
-                <li class="flex gap-4">
+                </div>
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="あなたと売却物件との関係" value="弁護士、銀行担当者など、名義人・名義人の家族、親族から依頼を受けた方" id="代理人" /><label for="代理人">弁護士、銀行担当者など、名義人・名義人の家族、親族から依頼を受けた方</label>
-                </li>
-                <li class="flex gap-4">
+                </div>
+                <div class="flex gap-4">
                   <input class="bg-gray-300" type="radio" name="あなたと売却物件との関係" value="その他" id="その他" /><label for="その他">その他</label>
-                </li>
-              </ul>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+                </div>
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-gray-500 p-1 text-white">任意</p>
                 <p class="font-bold">住宅ローン残高(残債)</p>
-              </div>
-              <div class="flex items-center gap-4">
+              </th>
+              <td class="flex items-center gap-4">
                 <p>約</p><input type="text" name="住宅ローン残高" class="w-full bg-gray-300">
                 <p class="w-[3rem]">万円</p>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-gray-500 p-1 text-white">任意</p>
                 <p class="font-bold">希望買取金額</p>
-              </div>
-              <div class="flex items-center gap-4">
+              </th>
+              <td class="flex items-center gap-4">
                 <p>約</p><input type="text" name="希望買取金額" class="w-full bg-gray-300">
                 <p class="w-[3rem]">万円</p>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">お名前</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <p class="text-[#5D0000]">匿名での依頼は承れません</p>
                 <p>例：売却 太郎</p>
                 <input type="text" name="お名前" class="w-full bg-gray-300" required />
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">フリガナ</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <p>例：バイキャク タロウ</p>
                 <input type="text" name="フリガナ" class="w-full bg-gray-300" required />
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">性別</p>
-              </div>
-              <ul class="grid gap-4">
-                <li class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="男性" value="男性"><label for="男性">男性</label></li>
-                <li class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="女性" value="女性"><label for="女性">女性</label></li>
-                <li class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="回答しない" value="回答しない"><label for="回答しない">回答しない</label></li>
-              </ul>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </th>
+              <td class="grid gap-4">
+                <div class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="男性" value="男性"><label for="男性">男性</label></div>
+                <div class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="女性" value="女性"><label for="女性">女性</label></div>
+                <div class="flex gap-4"><input class="bg-gray-300" type="radio" name="性別" id="回答しない" value="回答しない"><label for="回答しない">回答しない</label></div>
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">電話番号</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <p class="text-[#5D0000]">番号の間違いがないようご確認ください</p>
                 <p>例: 0312340000</p>
                 <input type="number" name="電話番号" class="w-full bg-gray-300" required>
@@ -304,14 +305,14 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                     </select>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-red-500 p-1 text-white">必須</p>
                 <p class="font-bold">メールアドレス</p>
-              </div>
-              <div class="grid gap-4">
+              </th>
+              <td class="grid gap-4">
                 <div class="grid gap-4">
                   <p class="text-[#5D0000]">メールアドレスの間違いがないようご確認ください</p>
                   <p>例：baikyaku_t@realestate.co.jp <br class="sm:hidden block" />PC、携帯どちらも可</p>
@@ -322,37 +323,37 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
                   <input type="email" name="メールアドレス（確認用）" id="メールアドレス（確認用）" class="p-[10px] w-full bg-gray-300" required />
                   <p class="hidden text-red-400" id="email-confirmation-warning">アドレスが異なります</p>
                 </div>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-gray-500 p-1 text-white">任意</p>
                 <p class="font-bold">希望する連絡方法</p>
-              </div>
-              <div class="flex gap-4">
+              </th>
+              <td class="flex gap-4">
                 <div class="flex gap-2">
                   <input class="bg-gray-300" type="checkbox" name="希望する連絡方法1" value="電話" id="電話" /><label for="電話">電話</label>
                 </div>
                 <div class="flex gap-2">
                   <input class="bg-gray-300" type="checkbox" name="希望する連絡方法2" value="メール" id="メール" /><label for="メール">メール</label>
                 </div>
-              </div>
-            </div>
-            <div class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
-              <div class="flex items-center gap-4">
+              </td>
+            </tr>
+            <tr class="grid grid-rows-[auto_auto] md:grid-cols-[17rem_1fr] items-start gap-4 p-4 px-0 md:px-8 border-0 md:border-t-[1px] border-black">
+              <th class="flex items-center gap-4">
                 <p class="bg-gray-500 p-1 text-white">任意</p>
                 <p class="font-bold">希望査定方法</p>
-              </div>
-              <div class="flex gap-4">
+              </th>
+              <td class="flex gap-4">
                 <div class="flex gap-2">
                   <input class="bg-gray-300" type="checkbox" name="希望査定方法1" value="机上" id="机上" /><label for="机上">机上</label>
                 </div>
                 <div class="flex gap-2">
                   <input class="bg-gray-300" type="checkbox" name="希望査定方法2" value="訪問" id="訪問" /><label for="訪問">訪問</label>
                 </div>
-              </div>
-            </div>
-          </div>
+              </td>
+            </tr>
+          </table>
           <div class="flex justify-center">
             <button type="submit" name="send" class="px-8 py-4 bg-[#5DADFF] hover:bg-[#0060c3] transition-all text-white text-xl font-bold">
               送信する
@@ -365,7 +366,7 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
   <footer class="footer bg-[#00152A] grid text-white mt-16">
     <div class="footer__inner p-4 md:p-8">
       <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 text-[12px] md:text-sm h-36">
-      <ul class="flex gap-4" data-aos="fade-up">
+        <ul class="flex gap-4" data-aos="fade-up">
           <li><a href="#">不動産売却</a></li>
           <li><a href="#">不動産購入</a></li>
           <li><a href="#">お問い合わせ</a></li>
@@ -403,7 +404,7 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
 
       if (form.checkValidity()) {
         if (email.value === confirmEmail.value) {
-          //form.submit();
+
           document.getElementById("email-confirmation-warning").classList.add('hidden');
         } else {
           document.getElementById("email-confirmation-warning").classList.remove('hidden');
@@ -423,36 +424,47 @@ $town = isset($_POST['town']) ? htmlspecialchars($_POST['town'], ENT_QUOTES, 'UT
     // Auto update Year build and add new year as it reach
     const currentYear = new Date().getFullYear();
 
-    const eras = [
-        { name: '令和', start: 2019, offset: 2018 },
-        { name: '平成', start: 1989, offset: 1988 },
-        { name: '昭和', start: 1926, offset: 1925 },
+    const eras = [{
+        name: '令和',
+        start: 2019,
+        offset: 2018
+      },
+      {
+        name: '平成',
+        start: 1989,
+        offset: 1988
+      },
+      {
+        name: '昭和',
+        start: 1926,
+        offset: 1925
+      },
     ];
 
     function getJapaneseYear(year) {
-        for (let era of eras) {
-            if (year >= era.start) {
-                const eraYear = year - era.offset;
-                return year + "年(" + era.name + (eraYear == 1 ? '元' : eraYear + '年') + ")";
-            }
+      for (let era of eras) {
+        if (year >= era.start) {
+          const eraYear = year - era.offset;
+          return year + "年(" + era.name + (eraYear == 1 ? '元' : eraYear + '年') + ")";
         }
-        return year + "年";
+      }
+      return year + "年";
     }
 
     function generateYearOptions() {
-        const yearSelect = document.getElementById('yearSelect');
+      const yearSelect = document.getElementById('yearSelect');
 
-        for (let i = currentYear; i >= 1926; i--) {
-            const japaneseYear = getJapaneseYear(i);
-            const age = currentYear - i;
-            const value = japaneseYear + "築" + (age == 0 ? "今年" : age + "年");
+      for (let i = currentYear; i >= 1926; i--) {
+        const japaneseYear = getJapaneseYear(i);
+        const age = currentYear - i;
+        const value = japaneseYear + "築" + (age == 0 ? "今年" : age + "年");
 
-            const option = document.createElement('option');
-            option.value = value;
-            option.textContent = value;
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
 
-            yearSelect.appendChild(option);
-        }
+        yearSelect.appendChild(option);
+      }
     }
 
     generateYearOptions();
