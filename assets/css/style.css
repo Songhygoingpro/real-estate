@@ -1,121 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap");
 
-        body {
-            font-family: "Noto Sans JP", sans-serif;
-            background-color: #EFF0F1;
-        }
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #eff0f1;
+}
 
 /*navigation drawer button*/
 #burger {
-    display: none;
-  }
-  
-  .nav-menu__container {
-    position: relative;
-  }
-  
-  .nav-menu__button {
-    width: 30px;
-    height: 28px;
-    display: block;
-    cursor: pointer;
-    transition: all 0.3s ease-in;
-    line-height: 8px;
-    font-family: "Poppins";
-  }
-  
-  .nav-menu__button span {
-    height: 2px;
-    width: 100%;
-    background-color: white;
-    display: inline-block;
-    transition: all 0.5s cubic-bezier(0.62, 0.43, 0.35, 1.47);
-  }
-  
-  #burger:checked ~ .nav-menu__button span:nth-child(1) {
-    width: 100%;
-    transform: rotate(45deg) translateY(6px) translateX(6px);
-  }
-  
-  #burger:checked ~ .nav-menu__button span:nth-child(2) {
-    width: 0;
-    opacity: 0;
-  }
-  
-  #burger:checked ~ .nav-menu__button span:nth-child(3) {
-    width: 100%;
-    transform: rotate(-45deg) translateY(-7px) translateX(7px);
-  }
-  
-  .nav-menu {
-    position: fixed;
-    top: 76px;
-    right: 0;
-    z-index: 20;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    padding: 1rem 1.5rem;
-  }
-  
-  
-  #burger:checked ~ .nav-menu {
-    transform: translateX(0);
-  }
-
-  /*custom select box*/
-  select {
-    appearance: none;
-    border: 0;
-    outline: 0;
-    background: none;
-    box-shadow: none;
-  }
-  
-  .custom-select-box {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .custom-select-box select {
-    flex: 1;
-    padding: 0.5rem;
-  }
-  
-  .custom-select-box::after {
-    content: "\25BC";
-    position: absolute;
-    right: 0.6rem;
-    top: 0.6rem;
-    pointer-events: none; 
-    color: black;
-    font-size: 0.85rem;
-  }
-
-  /*custom aos*/
-
-  [data-aos="custom-fadeUp"] {
-    opacity: 0;
-  }
-  
-  [data-aos="custom-fadeUp"].aos-animate {
-    opacity: 1;
-  }
-  
-  input[type="text"], input[type="number"] {
-    color: #333; 
-    padding: 10px;
+  display: none;
 }
 
+.nav-menu__container {
+  position: relative;
+}
+
+.nav-menu__button {
+  width: 30px;
+  height: 28px;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  line-height: 8px;
+  font-family: "Poppins";
+}
+
+.nav-menu__button span {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  display: inline-block;
+  transition: all 0.5s cubic-bezier(0.62, 0.43, 0.35, 1.47);
+}
+
+#burger:checked ~ .nav-menu__button span:nth-child(1) {
+  width: 100%;
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+#burger:checked ~ .nav-menu__button span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+
+#burger:checked ~ .nav-menu__button span:nth-child(3) {
+  width: 100%;
+  transform: rotate(-45deg) translateY(-7px) translateX(7px);
+}
+
+.nav-menu {
+  position: fixed;
+  top: 68px;
+  right: 0;
+  z-index: 20;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem 1.5rem;
+}
+
+#burger:checked ~ .nav-menu {
+  transform: translateX(0);
+}
+
+/*custom select box*/
+select {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.custom-select-box {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.custom-select-box select {
+  flex: 1;
+  padding: 0.5rem;
+  padding-right: 2rem;
+}
+
+.custom-select-box::after {
+  content: "\25BC";
+  position: absolute;
+  right: 0.6rem;
+  top: 0.6rem;
+  pointer-events: none;
+  color: black;
+  font-size: 0.85rem;
+}
+
+/*custom aos*/
+
+[data-aos="custom-fadeUp"] {
+  opacity: 0;
+}
+
+[data-aos="custom-fadeUp"].aos-animate {
+  opacity: 1;
+}
+
+input[type="text"],
+input[type="number"] {
+  color: #333;
+  padding: 10px;
+}
 
 /* Remove spinner button of the input field type number for WebKit browsers (Chrome, Safari, Edge) */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
--webkit-appearance: none;
- margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Remove spinner for other browsers */
 input[type="number"] {
-appearance: textfield; /* Fallback for other browsers */
+  appearance: textfield; /* Fallback for other browsers */
 }
+

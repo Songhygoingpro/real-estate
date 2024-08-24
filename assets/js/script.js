@@ -6,20 +6,6 @@ hero_section.forEach((element, index) => {
   element.setAttribute("data-aos-delay", `${index * 100}`);
 });
 
-const faq_section = document.querySelectorAll(
-  '.faq-section [data-aos="fade-up"]'
-);
-faq_section.forEach((element, index) => {
-  element.setAttribute("data-aos-delay", `${index * 100}`);
-});
-
-const step_section = document.querySelectorAll(
-  '.step-section [data-aos="fade-up"]'
-);
-step_section.forEach((element, index) => {
-  element.setAttribute("data-aos-delay", `${index * 100}`);
-});
-
 const footer = document.querySelectorAll('.footer [data-aos="fade-up"]');
 footer.forEach((element, index) => {
   element.setAttribute("data-aos-delay", `${index * 100}`);
