@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>おうち買取.com</title>
+    <link rel="icon" type="image/png" href="../assets/img/site-favicon.png" />
+    <link rel="stylesheet" media="screen" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+  </head>
+
+  <body>
+    <header class="flex text-white justify-between items-center transition-colors p-4 md:px-10 w-full fixed top-0 z-10">
+      <a href="index.html" data-aos="fadeUp"><img src="../assets/img/real-estate-white-logo.png" class="h-9 w-auto" id="site-logo" alt /></a>
+      <nav class="hidden md:block">
+        <ul class="flex gap-4">
+          <li><a href="">不動産売却</a></li>
+          <li><a href="">不動産購入</a></li>
+          <li><a href="">お問合せ</a></li>
+        </ul>
+      </nav>
+      <!-- navigation drawer for mobile screen -->
+      <div class="nav-menu__container md:hidden block z-[10]">
+        <input type="checkbox" id="burger" />
+        <label for="burger" class="nav-menu__button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-menu flex flex-col gap-6 p-10 bg-white">
+          <ul class="menu-items flex flex-col gap-3 text-black">
+            <li class="pb-2 border-b border-gray-700">
+              <a href="#">不動産売却</a>
+            </li>
+            <li class="pb-2 border-b border-gray-700">
+              <a href="#">不動産購入</a>
+            </li>
+            <li class="pb-2 border-b border-gray-700">
+              <a href="#">お問合せ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero-section">
+        <div class="hero-section__inner w-full h-[840px] min-[784px]:h-[740px] flex flex-col z-[-1] justify-end items-center gap-32 px-4 relative">
+          <img class="h-[600px] w-full object-cover absolute top-0 z-[-1]" src="../assets/img/hero-image.png" data-aos="fadeUp" />
+          <h1 class="text-3xl lg:text-4xl xl:text-5xl text-center xl:leading-[1.25] font-bold text-black" data-aos="fade-up">
+            一番高い査定額が分かる
+            <br /><span class="text-red-600">無料</span>の一括見積もりサイト
+          </h1>
+
+          <ul class="min-[784px]:flex grid grid-cols-2 min-[784px]:items-end justify-center text-white">
+            <li class="grid max-[784px]:grid-rows-[1fr_auto]">
+              <div class="flex flex-col items-center gap-4 px-10 min-[784px]:pt-7 py-5 bg-[#3696F9]">
+                <p class="text-xl min-[784px]:text-2xl font-bold">A社</p>
+                <img class="max-w-[150px] w-full h-auto" src="../assets//img/A-920-building.png" alt="" />
+              </div>
+              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full h-fit py-2 bg-[#267ED9]">920</p>
+            </li>
+            <li class="grid max-[784px]:grid-rows-[1fr_auto]">
+              <div class="flex flex-col items-center gap-4 px-10 py-5 bg-[#5DADFF]">
+                <p class="text-xl min-[784px]:text-2xl font-bold">B社</p>
+                <img class="max-w-[150px] w-full h-auto" src="../assets//img/B-780-building.png" alt="" />
+              </div>
+              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full h-fit py-2 bg-[#2386ED]">780</p>
+            </li>
+            <li class="grid max-[784px]:grid-rows-[1fr_auto]">
+              <div class="flex flex-col items-center gap-4 px-10 py-5 bg-[#4BA0F6]">
+                <p class="text-xl min-[784px]:text-2xl font-bold">C社</p>
+                <img class="max-w-[150px] w-full h-auto" src="../assets//img/C-850-building.png" alt="" />
+              </div>
+              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full h-fit py-2 bg-[#217AD4]">850</p>
+            </li>
+            <li class="grid max-[784px]:grid-rows-[1fr_auto]">
+              <div class="flex flex-col items-center gap-4 px-10 min-[784px]:pt-10 py-5 bg-[#298FF6]">
+                <p class="text-xl min-[784px]:text-2xl font-bold">D社</p>
+                <img class="max-w-[150px] w-full h-auto" src="../assets//img/D-1200-building.png" alt="" />
+              </div>
+              <p class="text-3xl min-[784px]:text-4xl font-black text-[#F8F800] text-center w-full h-fit py-2 bg-[#0C68C6]">1200</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="location-form flex flex-col gap-10 pt-20">
+        <h1 class="text-[#333333] text-3xl min-[784px]:text-5xl font-bold px-4 text-center"><span class="text-red-600">無料</span>簡単見積もり<span class="text-red-600">スタート</span></h1>
+        <div class="location-form__inner">
+          <form action="../satei/index.php" method="post" id="locationForm" class="bg-[#004790] flex flex-col items-center gap-6 px-4 py-[60px] w-full" data-aos="custom-fadeUp">
+            <h2 class="text-[20px] sm:text-3xl text-center text-white font-bold">簡単・無料！査定価格を比較しよう！</h2>
+            <div class="grid md:flex gap-4">
+              <div class="flex flex-col gap-2">
+                <h3 class="text-white font-bold text-center md:text-start">物件の種別</h3>
+                <div class="custom-select-box border-2 border-gray-400 w-[12rem] bg-white">
+                  <select class="border-[1px] border-gray-400" name="物件の種別" id="物件の種別" required>
+                    <option value>物件種別</option>
+                    <option value="マンション">マンション</option>
+                    <option value="一戸建て">一戸建て</option>
+                    <option value="土地">土地</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-white font-bold text-center md:text-start">物件の所在地</h3>
+                <div class="grid md:flex gap-4">
+                  <div class="custom-select-box border-2 border-gray-400 w-[12rem] bg-white">
+                    <select class="border-[1px] border-gray-400" name="prefecture" id="prefecture" required>
+                      <option value>都道府県</option>
+                      <option value="北海道">北海道</option>
+                      <option value="青森県">青森県</option>
+                      <option value="岩手県">岩手県</option>
+                      <option value="宮城県">宮城県</option>
+                      <option value="秋田県">秋田県</option>
+                      <option value="山形県">山形県</option>
+                      <option value="福島県">福島県</option>
+                      <option value="茨城県">茨城県</option>
+                      <option value="栃木県">栃木県</option>
+                      <option value="群馬県">群馬県</option>
+                      <option value="埼玉県">埼玉県</option>
+                      <option value="千葉県">千葉県</option>
+                      <option value="東京都">東京都</option>
+                      <option value="神奈川県">神奈川県</option>
+                      <option value="新潟県">新潟県</option>
+                      <option value="富山県">富山県</option>
+                      <option value="石川県">石川県</option>
+                      <option value="福井県">福井県</option>
+                      <option value="山梨県">山梨県</option>
+                      <option value="長野県">長野県</option>
+                      <option value="岐阜県">岐阜県</option>
+                      <option value="静岡県">静岡県</option>
+                      <option value="愛知県">愛知県</option>
+                      <option value="三重県">三重県</option>
+                      <option value="滋賀県">滋賀県</option>
+                      <option value="京都府">京都府</option>
+                      <option value="大阪府">大阪府</option>
+                      <option value="兵庫県">兵庫県</option>
+                      <option value="奈良県">奈良県</option>
+                      <option value="和歌山県">和歌山県</option>
+                      <option value="鳥取県">鳥取県</option>
+                      <option value="島根県">島根県</option>
+                      <option value="岡山県">岡山県</option>
+                      <option value="広島県">広島県</option>
+                      <option value="山口県">山口県</option>
+                      <option value="徳島県">徳島県</option>
+                      <option value="香川県">香川県</option>
+                      <option value="愛媛県">愛媛県</option>
+                      <option value="高知県">高知県</option>
+                      <option value="福岡県">福岡県</option>
+                      <option value="佐賀県">佐賀県</option>
+                      <option value="長崎県">長崎県</option>
+                      <option value="熊本県">熊本県</option>
+                      <option value="大分県">大分県</option>
+                      <option value="宮崎県">宮崎県</option>
+                      <option value="鹿児島県">鹿児島県</option>
+                      <option value="沖縄県">沖縄県</option>
+                    </select>
+                  </div>
+                  <div class="custom-select-box border-2 border-gray-400 w-[12rem] bg-white">
+                    <select class="border-[1px] border-gray-400" id="city" name="city" required>
+                      <option value="">市区郡</option>
+                    </select>
+                  </div>
+                  <div class="custom-select-box border-2 border-gray-400 w-[12rem] bg-white">
+                    <select class="border-[1px] border-gray-400" id="town" name="town" required>
+                      <option value="">町名</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="px-8 py-4 bg-[#5DADFF] hover:bg-[#2B93FF] transition-all text-white text-xl font-bold">60秒で簡単入力</button>
+          </form>
+        </div>
+      </section>
+      <section class="contact-section py-20 px-4">
+        <div class="cta" style="text-align: center">
+          <div class="c-inner">
+            <h5 class="font-bold min-[784px]:text-2xl text-[20px] px-4">お問い合わせ・資料請求はこちらから</h5>
+
+            <div class="btn-wrap">
+              <a href="/contact" class="btn btn-c text-[18px] min-[784px]:text-[22px] font-bold"><span class="text-[15px] inset-x-0 mx-auto">24時間いつでも受付中！</span><br /><i class="far fa-envelope"></i>メールでお問い合わせ（無料）</a>
+            </div>
+
+            <div class="c-tel">
+              <p class="text-[10px]">お電話でのお問い合わせ</p>
+              <div class="num max-[784px]:text-[32px] text-[36px]"><i class="fas fa-phone-square-alt"></i> 0120-616-663</div>
+              <span class="text-[10px]">受付時間：9:00〜20:00（土日祝日も受け付けております）</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="features-section flex flex-col items-center bg-[#E2F3F8] px-4 py-20 gap-10 text-[#333333]">
+        <h2 class="text-2xl min-[784px]:text-3xl font-bold" data-aos="fade-up">おうち買取.comの<strong class="text-[#FF0000]">強み</strong></h2>
+        <div class="features-section__inner container flex flex-col justify-center items-center">
+          <ul class="features-items max-w-[950px] w-full grid gap-4">
+            <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md shadow-md" data-aos="fade-up">
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">01</div>
+              <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">最大5社からの無料見積</p>
+            </li>
+            <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md shadow-md" data-aos="fade-up">
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">02</div>
+              <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">経験豊富な買取担当者に無料電話相談可能</p>
+            </li>
+            <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md shadow-md" data-aos="fade-up">
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">03</div>
+              <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">事故物件でも相談可能</p>
+            </li>
+            <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md shadow-md" data-aos="fade-up">
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">04</div>
+              <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">登録事業者募集中！</p>
+            </li>
+            <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md shadow-md" data-aos="fade-up">
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto">05</div>
+              <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">現地訪問見積もりの方に500円分のアマゾンギフト券プレゼント！（後日郵送）</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="step-section flex justify-center">
+        <div class="step-section__inner container flex flex-col justify-center items-center gap-8 py-20 px-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#00152A]" data-aos="fade-up">不動産売却までの流れ</h2>
+          <ul class="step-items grid gap-5 max-w-[950px] w-full">
+            <li class="step-item flex justify-between bg-white shadow-lg" data-aos="fade-up">
+              <div class="flex flex-col gap-[10px] p-4 md:px-6">
+                <h3 class="text-xl md:text-2xl text-[#00152A] font-bold">1. 査定・仲介会社を選ぶ</h3>
+                <p>
+                  まずは無料の一括査定を利用しましょう。<br class="hidden lg:block" />
+                  査定後、各社の中から不動産仲介会社を決めましょう。
+                </p>
+              </div>
+              <img class="max-w-[300px] w-full h-auto hidden md:block" src="../assets/img/appraisaloption-image.png" />
+            </li>
+            <li class="step-item flex justify-between bg-white shadow-lg" data-aos="fade-up">
+              <div class="flex flex-col gap-[10px] p-4 md:px-6">
+                <h3 class="text-xl md:text-2xl text-[#00152A] font-bold">2. 価格を決めて売り出し開始</h3>
+                <p>仲介会社を決めたら、あなたの家の売り出し価格を決めて売り出し開始です。<br class="hidden lg:block" />売り出し方は会社によって異なるので聞いてみましょう。</p>
+              </div>
+              <img class="max-w-[300px] w-full h-auto hidden md:block" src="../assets/img/setprice-image.png" />
+            </li>
+            <li class="step-item flex justify-between bg-white shadow-lg" data-aos="fade-up">
+              <div class="flex flex-col gap-[10px] p-4 md:px-6">
+                <h3 class="text-xl md:text-2xl text-[#00152A] font-bold">3. 見学客を迎える</h3>
+                <p>
+                  見学客を迎える前にやるべきこと、注意することなど受け入れ方も仲介会社は<br class="hidden lg:block" />
+                  アドバイスしてくれます。あなたの家を高く売るための演出など実践しましょう。
+                </p>
+              </div>
+              <img class="max-w-[300px] w-full h-auto hidden md:block" src="../assets/img/welcomebuy-image.png" />
+            </li>
+            <li class="step-item flex justify-between bg-white shadow-lg" data-aos="fade-up">
+              <div class="flex flex-col gap-[10px] p-4 md:px-6">
+                <h3 class="text-xl md:text-2xl text-[#2A002A] font-bold">4. 売買契約 成立・引き渡し</h3>
+                <p>購入希望者と折り合いがついたら、売買契約を結び手付金を受け取ります。<br class="hidden lg:block" />買い替えの場合は引き渡しのタイミングが重要です。じっくり相談しましょう。</p>
+              </div>
+              <img class="max-w-[300px] w-full h-auto hidden md:block" src="../assets/img/ownership-image.png" />
+            </li>
+          </ul>
+          <button onclick="submitForm()" data-aos="fade-up" type="submit" class="px-8 py-4 bg-[#5DADFF] hover:bg-[#2B93FF] transition-colors text-white text-xl font-bold">60秒で簡単入力</button>
+        </div>
+      </section>
+      <section class="faq-section flex flex-col items-center bg-white">
+        <div class="faq-section__inner container flex flex-col justfiy-center items-center gap-8 py-20 px-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#00152A]" data-aos="fade-up">よくある質問</h2>
+          <ul class="faq-items max-w-[950px] w-full grid gap-8 overflow-hidden">
+            <li class="faq-item grid gap-4 pb-6 border-b-[1px] border-[#B3B3B3]" data-aos="fade-up">
+              <div class="faq-quesition flex items-start gap-2">
+                <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black" style="font-family: 'Inter', sans-serif">Q</p>
+                <p class="text-[19px] md:text-2xl text-start font-bold">利用にお金はかかりますか？</p>
+              </div>
+              <div class="faq-answer flex items-start gap-2">
+                <p class="text-[#FF62C0] font-black text-[20px] font-sans">A.</p>
+                <p>ご紹介する不動産会社での査定は全て無料です。</p>
+              </div>
+            </li>
+            <li class="faq-item grid gap-4 pb-6 border-b-[1px] border-[#B3B3B3]" data-aos="fade-up">
+              <div class="faq-quesition flex items-start gap-2">
+                <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black" style="font-family: 'Inter', sans-serif">Q</p>
+                <p class="text-[19px] md:text-2xl font-bold text-start">査定依頼をしたらその会社に売却依頼をしないといけないのですか？</p>
+              </div>
+              <div class="faq-answer flex items-start gap-2">
+                <p class="text-[#FF62C0] font-black text-[20px] font-sans">A.</p>
+                <p>必ずしも、その会社に売却を依頼する必要はありません。査定を受けて会社を選びます。</p>
+              </div>
+            </li>
+            <li class="faw-item grid gap-4 pb-6 border-b-[1px] border-[#B3B3B3]" data-aos="fade-up">
+              <div class="faq-quesition flex items-start gap-2">
+                <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black" style="font-family: 'Inter', sans-serif">Q</p>
+                <p class="text-[19px] md:text-2xl font-bold text-start">近隣住民に売却したことを知られますか？</p>
+              </div>
+              <div class="faq-answer flex items-start gap-2">
+                <p class="text-[#FF62C0] font-black text-[20px] font-sans">A.</p>
+                <p>知られることはございません。ご安心ください。</p>
+              </div>
+            </li>
+            <li class="faq-item grid gap-4 pb-6 border-b-[1px] border-[#B3B3B3]" data-aos="fade-up">
+              <div class="faq-quesition flex items-start gap-2">
+                <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black" style="font-family: 'Inter', sans-serif">Q</p>
+                <p class="text-[19px] md:text-2xl font-bold text-start">しつこい営業電話はかかってきますか？</p>
+              </div>
+              <div class="faq-answer flex items-start gap-2">
+                <p class="text-[#FF62C0] font-black text-[20px] font-sans">A.</p>
+                <p>査定に関する確認に利用させていただきます。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="contact-section py-20 px-4">
+        <div class="cta" style="text-align: center">
+          <div class="c-inner">
+            <h5 class="font-bold min-[784px]:text-2xl text-[20px] px-4">お問い合わせ・資料請求はこちらから</h5>
+
+            <div class="btn-wrap">
+              <a href="/contact" class="btn btn-c text-[18px] min-[784px]:text-[22px] font-bold"><span class="text-[15px] inset-x-0 mx-auto">24時間いつでも受付中！</span><br /><i class="far fa-envelope"></i>メールでお問い合わせ（無料）</a>
+            </div>
+
+            <div class="c-tel">
+              <p class="text-[10px]">お電話でのお問い合わせ</p>
+              <div class="num max-[784px]:text-[32px] text-[36px]"><i class="fas fa-phone-square-alt"></i> 0120-616-663</div>
+              <span class="text-[10px]">受付時間：9:00〜20:00（土日祝日も受け付けております）</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer bg-[#00152A] grid text-white">
+      <div class="footer__inner p-4 md:p-8">
+        <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-8 text-[12px] md:text-sm h-36">
+          <ul class="flex gap-4" data-aos="fade-up">
+            <li><a href="#">不動産売却</a></li>
+            <li><a href="#">不動産購入</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#">加盟店募集</a></li>
+          </ul>
+          <ul class="flex gap-4" data-aos="fade-up">
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">ご利用規約</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center py-4 border-t-[1px] w-full">
+        <p class="text-xs">© 2024 Real Estate All Rights Reserved.</p>
+      </div>
+    </footer>
+    <button id="backToTop" class="fixed bottom-7 md:bottom-10 right-7 md:right-10 text-white hidden w-10 md:w-14 h-10 md:h-14">
+      <img class="opacity-75 hover:opacity-100 transition-all" src="../assets/img/backtotop-icon.png" alt="" />
+    </button>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        offset: 0,
+        once: true,
+      });
+
+      //submitForm funciton for addiction button at the bottom of the page
+      function submitForm() {
+        let form = document.getElementById("locationForm");
+
+        if (form.checkValidity()) {
+          form.submit();
+        } else {
+          form.reportValidity();
+        }
+      }
+
+      //make  options in select boxes change dynamically correspond to prefecture and city
+      $(document).ready(function () {
+        $("#prefecture").change(function () {
+          let selectedValue = $(this).val();
+          $.ajax({
+            url: "../src/get_options_for_city.php",
+            type: "GET",
+            data: { selectedValue: selectedValue },
+            success: function (response) {
+              $("#city").html(response);
+            },
+          });
+        });
+
+        $("#city").change(function () {
+          let selectedValue = $(this).val();
+          let parentValue = $("#prefecture").val();
+          $.ajax({
+            url: "../src/get_options_for_town.php",
+            type: "GET",
+            data: { selectedValue: selectedValue, parentValue: parentValue },
+            success: function (response) {
+              $("#town").html(response);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
