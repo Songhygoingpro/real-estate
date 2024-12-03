@@ -58,14 +58,14 @@ if (isset($_POST["send"])) {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';  // Your SMTP server
     $mail->SMTPAuth = true;
-    $mail->Username = 'songhy994@gmail.com'; // SMTP username
-    $mail->Password = 'synawxawlelpzreg'; // SMTP password
+    $mail->Username = 'exampleSender@gmail.com'; // SMTP username
+    $mail->Password = 'examplePassword'; // SMTP password
     $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465; // TCP port to connect to
 
     //Recipients
     $mail->setFrom($_POST["メールアドレス"], $_POST["お名前"]); // Sender Email and name
-    $mail->addAddress('songhyham@gmail.com');     //Add a recipient email  
+    $mail->addAddress('example@gmail.com');     //Add a recipient email  
     $mail->addReplyTo($_POST["メールアドレス"], $_POST["お名前"]); // reply to sender email
 
     //Content
@@ -146,21 +146,21 @@ if (isset($_POST["send"])) {
 
 
     // Send email
-     if ($mail->send()) {
-        // Insert data into the database
-        $stmt = $conn->prepare("INSERT INTO inquiries (property_type, address, name, gender, phone_number, email_address) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $物件の種別, $物件の所在地, $お名前, $性別, $電話番号, $メールアドレス);
+    //  if ($mail->send()) {
+    //     // Insert data into the database
+    //     $stmt = $conn->prepare("INSERT INTO inquiries (property_type, address, name, gender, phone_number, email_address) VALUES (?, ?, ?, ?, ?, ?)");
+    //     $stmt->bind_param("ssssss", $物件の種別, $物件の所在地, $お名前, $性別, $電話番号, $メールアドレス);
 
-        if ($stmt->execute()) {
-            header("Location: success.html");
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-        $stmt->close();
-    } else {
-        echo "Failed to send email.";
-    }
+    //     if ($stmt->execute()) {
+    //         header("Location: success.html");
+    //     } else {
+    //         echo "Error: " . $stmt->error;
+    //     }
+    //     $stmt->close();
+    // } else {
+    //     echo "Failed to send email.";
+    // }
 
-    $conn->close(); 
+    // $conn->close(); 
     
 }

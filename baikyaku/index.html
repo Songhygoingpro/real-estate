@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="text-white flex justify-between items-center transition-colors p-4 min-[784px]:px-10 w-full fixed top-0 z-10">
+    <header class="w-full text-white flex justify-between items-center transition-colors p-4 min-[784px]:px-10 fixed top-0 z-10">
       <a href="index.html" data-aos="fadeUp"><img src="../assets/img/real-estate-white-logo.png" class="h-9 w-auto" id="site-logo" alt /></a>
       <nav class="hidden min-[784px]:block">
         <ul class="flex gap-4">
@@ -22,7 +22,7 @@
         </ul>
       </nav>
       <!-- navigation drawer for mobile screen -->
-      <div class="nav-menu__container min-[784px]:hidden block z-[10]">
+      <div class="nav-menu__container min-[784px]:hidden block z-10">
         <input type="checkbox" id="burger" />
         <label for="burger" class="nav-menu__button">
           <span></span>
@@ -47,8 +47,8 @@
     <main>
       <section class="hero-section">
         <div class="hero-section__inner w-full h-[840px] min-[784px]:h-[740px] flex flex-col justify-end items-center gap-32 px-4 relative">
-          <img class="h-[600px] w-full object-cover absolute top-0" src="../assets/img/hero-image.png" data-aos="fadeUp" />
-          <h1 class="text-3xl min-[784px]:text-5xl text-center !leading-[1.5] font-bold text-black" data-aos="fade-up">
+          <img class="hero-section__bg h-[600px] w-full object-cover absolute top-0" src="../assets/img/hero-image.png" data-aos="fadeUp" />
+          <h1 class="hero-section__headline text-3xl font-bold text-black min-[784px]:text-5xl text-center !leading-[1.5]" data-aos="fade-up">
             一番高い査定額が分かる
             <br /><span class="text-red-600">無料</span>の一括見積もりサイト
           </h1>
@@ -57,39 +57,39 @@
             <li class="grid max-[784px]:grid-rows-[1fr_auto]">
               <div class="flex flex-col items-center gap-4 px-10 min-[784px]:pt-7 py-5 bg-[#3696F9]">
                 <p class="text-xl min-[784px]:text-2xl font-bold">A社</p>
-                <img class="max-w-[150px] w-full h-auto" src="../assets//img/A-920-building.png" alt="" />
+                <img class="max-w-[150px] w-full h-auto" src="../assets/img/A-920-building.png" alt="" />
               </div>
-              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full h-fit py-2 bg-[#267ED9]">920</p>
+              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full py-2 bg-[#267ED9]">920</p>
             </li>
             <li class="grid max-[784px]:grid-rows-[1fr_auto]">
               <div class="flex flex-col items-center gap-4 px-10 py-5 bg-[#5DADFF]">
                 <p class="text-xl min-[784px]:text-2xl font-bold">B社</p>
-                <img class="max-w-[150px] w-full h-auto" src="../assets//img/B-780-building.png" alt="" />
+                <img class="max-w-[150px] w-full h-auto" src="../assets/img/B-780-building.png" alt="" />
               </div>
-              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full h-fit py-2 bg-[#2386ED]">780</p>
+              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full py-2 bg-[#2386ED]">780</p>
             </li>
             <li class="grid max-[784px]:grid-rows-[1fr_auto]">
               <div class="flex flex-col items-center gap-4 px-10 py-5 bg-[#4BA0F6]">
                 <p class="text-xl min-[784px]:text-2xl font-bold">C社</p>
-                <img class="max-w-[150px] w-full h-auto" src="../assets//img/C-850-building.png" alt="" />
+                <img class="max-w-[150px] w-full h-auto" src="../assets/img/C-850-building.png" alt="" />
               </div>
-              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full h-fit py-2 bg-[#217AD4]">850</p>
+              <p class="text-3xl min-[784px]:text-4xl font-black text-center w-full py-2 bg-[#217AD4]">850</p>
             </li>
             <li class="grid max-[784px]:grid-rows-[1fr_auto]">
               <div class="flex flex-col items-center gap-4 px-10 min-[784px]:pt-10 py-5 bg-[#298FF6]">
                 <p class="text-xl min-[784px]:text-2xl font-bold">D社</p>
-                <img class="max-w-[150px] w-full h-auto" src="../assets//img/D-1200-building.png" alt="" />
+                <img class="max-w-[150px] w-full h-auto" src="../assets/img/D-1200-building.png" alt="" />
               </div>
-              <p class="text-3xl min-[784px]:text-4xl text-center font-black text-[#F8F800] w-full h-fit py-2 bg-[#0C68C6]">1200</p>
+              <p class="text-3xl min-[784px]:text-4xl text-center font-black text-[#F8F800] w-full py-2 bg-[#0C68C6]">1200</p>
             </li>
           </ul>
         </div>
       </section>
-      <section class="location-form flex flex-col gap-10 pt-20">
-        <h1 class="text-[#333333] text-center text-3xl min-[784px]:text-5xl font-bold px-4"  data-aos="fade-up"><span class="text-red-600">無料</span>簡単見積もり<span class="text-red-600">スタート</span></h1>
-        <div class="location-form__inner">
-          <form action="../satei/index.php" method="post" id="locationForm" class="bg-[#004790] flex flex-col items-center gap-6 px-4 py-[60px] w-full" data-aos="custom-fadeUp">
-            <h2 class="text-[20px] sm:text-3xl text-center text-white font-bold">簡単・無料！査定価格を比較しよう！</h2>
+      <section class="location-form-section grid gap-10 pt-20">
+        <h1 class="text-[#333333] text-center text-3xl min-[784px]:text-5xl font-bold px-4" data-aos="fade-up"><span class="text-red-600">無料</span>簡単見積もり<span class="text-red-600">スタート</span></h1>
+        <div class="location-form-section__inner">
+          <form action="../satei/index.php" method="post" id="locationForm" class="bg-[#004790] flex flex-col items-center gap-8 px-4 py-[60px] w-full" data-aos="custom-fadeUp">
+            <h2 class="location-form__headline text-[20px] min-[784px]:text-3xl text-center text-white font-bold">簡単・無料！査定価格を比較しよう！</h2>
             <div class="grid min-[784px]:flex gap-4">
               <div class="flex flex-col gap-2">
                 <h3 class="text-white font-bold text-center min-[784px]:text-start">物件の種別</h3>
@@ -170,7 +170,7 @@
                 </div>
               </div>
             </div>
-            <button type="submit" class="px-8 py-4 bg-[#5DADFF] hover:bg-[#2B93FF] transition-all text-white text-xl font-bold">60秒で簡単入力</button>
+            <button type="submit" class="bg-[#5DADFF] hover:bg-[#2B93FF] transition-all text-white text-xl font-bold px-8 py-4">60秒で簡単入力</button>
           </form>
         </div>
       </section>
@@ -191,24 +191,24 @@
           </div>
         </div>
       </section>
-      <section class="features-section flex flex-col items-center bg-[#E2F3F8] px-4 py-20 gap-10 text-[#333333]">
-        <h2 class="text-2xl min-[784px]:text-3xl font-bold" data-aos="fade-up">おうち買取.comの<strong class="text-[#FF0000]">強み</strong></h2>
-        <div class="features-section__inner container flex flex-col justify-center items-center">
-          <ul class="features-items max-w-[950px] w-full grid gap-4">
+      <section class="feature-section flex flex-col items-center text-[#333333] bg-[#E2F3F8] px-4 py-20 gap-10">
+        <h2 class="feature-section__title text-2xl min-[784px]:text-3xl font-bold" data-aos="fade-up">おうち買取.comの<span class="text-red-600">強み</span></h2>
+        <div class="feature-section__inner max-w-[950px] w-full grid">
+          <ul class="feature-items grid gap-4">
             <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md" data-aos="fade-up">
-              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">01</div>
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif">01</div>
               <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">最大5社からの無料見積</p>
             </li>
             <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md" data-aos="fade-up">
-              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">02</div>
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif">02</div>
               <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">経験豊富な買取担当者に無料電話相談可能</p>
             </li>
             <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md" data-aos="fade-up">
-              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">03</div>
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif">03</div>
               <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">事故物件でも相談可能</p>
             </li>
             <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md" data-aos="fade-up">
-              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif;">04</div>
+              <div class="feature-number bg-[#5DADFF] rounded-l-md text-white text-center font-medium text-[40px] min-[784px]:text-5xl flex justify-center items-center p-4 h-auto" style="font-family: 'Phudu', sans-serif">04</div>
               <p class="text-[16px] px-4 py-[30px] min-[784px]:text-xl flex items-center">登録事業者募集中！</p>
             </li>
             <li class="feature-item grid grid-cols-[6rem_1fr] bg-white rounded-md" data-aos="fade-up">
@@ -218,10 +218,10 @@
           </ul>
         </div>
       </section>
-      <section class="step-section flex justify-center">
-        <div class="step-section__inner container flex flex-col justify-center items-center gap-10 py-20 px-4">
-          <h2 class="text-2xl min-[784px]:text-3xl font-bold text-[#00152A]" data-aos="fade-up">不動産売却までの流れ</h2>
-          <ul class="step-items grid gap-5 max-w-[950px] w-full">
+      <section class="step-section flex flex-col items-center gap-10 py-20 px-4">
+        <h2 class="step-section__title text-2xl min-[784px]:text-3xl font-bold text-[#333333]" data-aos="fade-up">不動産売却までの流れ</h2>
+        <div class="step-section__inner max-w-[950px] w-full flex flex-col justify-center items-center gap-10">
+          <ul class="step-items grid gap-5">
             <li class="step-item flex justify-between bg-white shadow-lg" data-aos="fade-up">
               <div class="flex flex-col gap-[10px] p-4 min-[784px]:px-6">
                 <h3 class="text-lg min-[784px]:text-xl text-[#00152A] font-bold">1. 査定・仲介会社を選ぶ</h3>
@@ -260,10 +260,10 @@
           <button onclick="submitForm()" data-aos="fade-up" type="submit" class="px-8 py-4 bg-[#5DADFF] hover:bg-[#2B93FF] transition-colors text-white text-xl font-bold">60秒で簡単入力</button>
         </div>
       </section>
-      <section class="faq-section flex flex-col items-center bg-white">
-        <div class="faq-section__inner container flex flex-col justfiy-center items-center gap-10 py-20 px-4">
-          <h2 class="text-2xl min-[784px]:text-3xl font-bold text-[#00152A]" data-aos="fade-up">よくある質問</h2>
-          <ul class="faq-items max-w-[950px] w-full grid gap-8 overflow-hidden">
+      <section class="faq-section bg-white flex flex-col items-center gap-10 py-20 px-4">
+        <h2 class="faq-section__title text-2xl min-[784px]:text-3xl font-bold text-[#333333]" data-aos="fade-up">よくある質問</h2>
+        <div class="faq-section__inner max-w-[950px] w-full grid">
+          <ul class="faq-items grid gap-8">
             <li class="faq-item grid gap-4 pb-6 border-b-[1px] border-[#B3B3B3]" data-aos="fade-up">
               <div class="faq-quesition flex items-start gap-2">
                 <p class="bg-[#004790] text-white py-[3px] px-2 text-center rounded-full font-black" style="font-family: 'Inter', sans-serif">Q</p>

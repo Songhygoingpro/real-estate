@@ -95,7 +95,7 @@ select {
 /* contact section */
 
 .c-inner {
-  max-width: 860px;
+  max-width: 950px;
   width: 100%;
   background: #fff;
   margin: 0 auto;
@@ -159,7 +159,6 @@ a.btn-c {
 a.btn-c span {
   position: absolute;
   top: -1.25rem;
-  /* left: calc(50% - 150px); */
   display: block;
   max-width: 300px;
   width: 100%;
@@ -181,7 +180,6 @@ a.btn-c span:before {
 
 a.btn-c span:after {
   bottom: -7px;
-
   border-width: 10px 10px 0 10px;
   border-style: solid;
   border-color: #fff transparent transparent transparent;
@@ -194,7 +192,6 @@ a.btn-c i {
 a.btn-c:hover {
   -webkit-transform: translate(0, 3px);
   transform: translate(0, 3px);
-
   color: #fff;
   background: #eb5b30;
   -webkit-box-shadow: 0 2px 0 #d44114;
@@ -241,4 +238,12 @@ input[type="number"]::-webkit-inner-spin-button {
 /* Remove spinner for other browsers */
 input[type="number"] {
   appearance: textfield; /* Fallback for other browsers */
+}
+
+@media (max-width: 784px) {
+  a.btn-c span {
+    max-width: none;
+    width: fit-content;
+    padding: 0.2rem 2rem;
+  }
 }
